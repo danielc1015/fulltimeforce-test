@@ -13,7 +13,7 @@ export function CommitList() {
 
   return (
     <>
-      {commits.map((commit) => (
+      {commits.map((commit: Commit) => (
         <CommitItem key={commit.sha} commit={commit} />
       ))}
     </>

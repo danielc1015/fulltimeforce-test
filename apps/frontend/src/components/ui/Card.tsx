@@ -4,13 +4,16 @@ import { ReactNode } from "react";
 
 interface CardProps {
   children?: ReactNode;
+  className?: string;
+  url?: string;
 }
 
-export function Card({ children }: CardProps) {
+export function Card({ children, className, url }: CardProps) {
   return (
     <a
-      href="#"
-      className="block max-w-lg p-6 border rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      href={url}
+      target="_blank"
+      className={"block max-w-lg p-6 border rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" + " "  + className}
     >
       {children}
     </a>
