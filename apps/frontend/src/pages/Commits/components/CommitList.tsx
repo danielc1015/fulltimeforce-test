@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CommitItem } from "./CommitItem";
+import { useCommits } from "../../../hooks/useCommits";
+import { Commit } from "../../../types/commit";
 
 export function CommitList() {
-  const commits = [
-    {
-      id: "1",
-      title: "Commit 1",
-      body: "Commit 1 Body",
-    },
-  ];
+
+  const {commits, getCommits } = useCommits();
+
+  useEffect(() => {
+    getCommits();
+  }, []);
 
   return (
     <>
       {commits.map((commit) => (
-        <CommitItem key={commit.id} commit={commit} />
+        <CommitItem key={commit.sha} commit={commit} />
       ))}
     </>
   );
