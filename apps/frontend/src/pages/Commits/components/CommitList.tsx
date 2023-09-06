@@ -6,7 +6,7 @@ import { Tag } from "../../../components/ui/Tag";
 import { Spinner } from "../../../components/ui/Spinner";
 
 export function CommitList() {
-  const { commits, getCommits, loading } = useCommits();
+  const { commits, getCommits, loading, error } = useCommits();
 
   useEffect(() => {
     getCommits();
@@ -15,10 +15,11 @@ export function CommitList() {
   return (
     <>
       <Tag text={"Listing " + commits.length + " Commits"} color="blue" />
-      {!loading && commits.map((commit: Commit) => (
+      {(!loading && !error) && commits.map((commit: Commit) => (
         <CommitItem key={commit.sha} commit={commit} />
       ))}
       {loading && <Spinner />}
+      {error && <p className="text-red-500">{error + ". Please try later"}</p>}
     </>
   );
 }

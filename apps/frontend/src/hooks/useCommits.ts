@@ -5,13 +5,19 @@ import { Commit } from "../types/commit";
 export function useCommits() {
   const [commits, setCommits] = useState<Commit[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const getCommits = async () => {
     setLoading(true);
-    const commits = await searchCommits();
-    setCommits(commits);
-    setLoading(false);
+    try {
+      const commits = await searchCommits();
+      setCommits(commits);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  return { commits, getCommits, loading };
+  return { commits, getCommits, loading, error };
 }
