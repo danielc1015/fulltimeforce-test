@@ -4,11 +4,14 @@ import { Commit } from "../types/commit";
 
 export function useCommits() {
   const [commits, setCommits] = useState<Commit[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const getCommits = async () => {
+    setLoading(true);
     const commits = await searchCommits();
     setCommits(commits);
+    setLoading(false);
   };
 
-  return { commits, getCommits };
+  return { commits, getCommits, loading };
 }
