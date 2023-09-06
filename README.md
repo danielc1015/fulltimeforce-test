@@ -53,10 +53,13 @@ npm install
 3. Run the server:
 
 ```bash
-npm run start
+npm run dev
 ```
 
 ## Test the app
 
-<!-- TODO: Verify PORT NUMBER before publish -->
-1. Open your browser and go to `http://localhost:3000/`
+Make shure your 3000 port is free. Otherwise, the app is not going to work correctly. 
+
+1. Open your browser and go to `http://localhost:5173/` 
+
+You'll need the port 5173 too. When running the frontend, if the console shows other port, just go to the link that the console shows. 
