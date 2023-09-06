@@ -32,7 +32,7 @@ export function Docs() {
             Additionally, the 'pages' folder can be organized logically to
             reflect the UI, making it easier to find the code you're looking.
           </p>
-          <p>In this case Context API or Redux was not used just to minimize the dev time.</p>
+          <p>In this case Context API or Redux was not used just to minimize the dev time. Neither testing for the same reason.</p>
         </div>
       </Accordion>
     </>
