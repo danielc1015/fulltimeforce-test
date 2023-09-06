@@ -14,6 +14,7 @@ export class CommitService {
       {
         owner: this.owner,
         repo: this.repo,
+        order: 'desc',
       },
     );
 
