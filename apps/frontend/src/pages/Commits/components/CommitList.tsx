@@ -15,9 +15,11 @@ export function CommitList() {
   return (
     <>
       <Tag text={"Listing " + commits.length + " Commits"} color="blue" />
-      {(!loading && !error) && commits.map((commit: Commit) => (
-        <CommitItem key={commit.sha} commit={commit} />
-      ))}
+      {!loading &&
+        !error &&
+        commits.map((commit: Commit) => (
+          <CommitItem key={commit.sha} commit={commit} />
+        ))}
       {loading && <Spinner />}
       {error && <p className="text-red-500">{error + ". Please try later"}</p>}
     </>

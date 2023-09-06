@@ -13,7 +13,7 @@ export function Card({ children, className, url }: CardProps) {
     <a
       href={url}
       target="_blank"
-      className={"block max-w-lg p-6 border rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" + " "  + className}
+      className={"block max-w-3xl p-6 border rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" + " "  + className}
     >
       {children}
     </a>
